@@ -502,12 +502,12 @@ El laboratorio evidenció que los principios de red virtual practicados con VMwa
 
 ## REFERENCIAS
 
-[1] VMware, Inc., "VMware Workstation Pro 17 Documentation Overview," *Broadcom Docs*, 2024. [En línea]. Disponible en: https://docs.vmware.com/en/VMware-Workstation-Pro/index.html (accedido: Feb. 2026).
+[1] VMware, Inc., "VMware Workstation Pro 17 Documentation Overview," *Broadcom Docs*, 2024. [En línea]. Disponible en: [https://docs.vmware.com/en/VMware-Workstation-Pro/index.html](https://docs.vmware.com/en/VMware-Workstation-Pro/index.html) (accedido: Feb. 2026).
 
 [2] VMware, Inc., "Configuring Virtual Network Components," en *VMware Workstation Pro 17 User's Guide*, cap. Networking, Broadcom Docs, 2024.
 
-[3] Canonical Ltd., "Ubuntu Server Guide — Network Configuration," *Ubuntu Documentation*, 2023. [En línea]. Disponible en: https://ubuntu.com/server/docs/network-configuration (accedido: Feb. 2026).
+[3] Canonical Ltd., "Ubuntu Server Guide — Network Configuration," *Ubuntu Documentation*, 2023. [En línea]. Disponible en: [https://ubuntu.com/server/docs/network-configuration](https://ubuntu.com/server/docs/network-configuration) (accedido: Feb. 2026).
 
-[4] VMware, Inc., "VMware Tools Documentation," *Broadcom Docs*, 2024. [En línea]. Disponible en: https://docs.vmware.com/en/VMware-Tools/ (accedido: Feb. 2026).
+[4] VMware, Inc., "VMware Tools Documentation," *Broadcom Docs*, 2024. [En línea]. Disponible en: [https://docs.vmware.com/en/VMware-Tools/](https://docs.vmware.com/en/VMware-Tools/) (accedido: Feb. 2026).
 
-[5] J. Postel, "Internet Control Message Protocol," RFC 792, IETF, Sep. 1981. [En línea]. Disponible en: https://tools.ietf.org/html/rfc792 (accedido: Feb. 2026).
+[5] J. Postel, "Internet Control Message Protocol," RFC 792, IETF, Sep. 1981. [En línea]. Disponible en: [https://tools.ietf.org/html/rfc792](https://tools.ietf.org/html/rfc792) (accedido: Feb. 2026).
