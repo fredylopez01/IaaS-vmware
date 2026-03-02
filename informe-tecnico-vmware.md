@@ -4,7 +4,7 @@
 
 ### Informe Técnico — Configuración de Red en Máquinas Virtuales
 
-**Juan Esteban Moreno Gamboa**<br>
+**Juan Esteban Moreno Gamboa**
 **Fredy Oswaldo López Daza**<br>
 
 **Docente:** Frey Alfonso Santamaría Buitrago — Ingeniero de Sistemas
@@ -17,6 +17,8 @@ Tunja, 2026
 </div>
 
 ---
+
+> Nota: Este informe está basado en un marco teórico hecho previamente y es una parte importante para entenderlo en su totalidad. Este compilado se encuentra en el siguiente repositorio, con un Readme que relaciona tanto el marco teórico como el informe que es lo que comprende este trabajo [Repoitorio](https://github.com/fredylopez01/IaaS-vmware)
 
 ## TABLA DE CONTENIDOS
 
@@ -109,8 +111,6 @@ Antes de proceder con la instalación de VMware Workstation Pro, se verificó qu
 ![alt text](./images/image.png)
 *Figura 1: Captura del Administrador de Tareas mostrando la CPU del equipo con el campo "Virtualización: Habilitada".*
 
-Los resultados de la verificación del equipo utilizado en el laboratorio fueron los siguientes: [**completar con los datos reales del equipo: modelo de procesador, RAM total disponible, espacio en disco libre y versión de Windows**].
-
 ### 1.2. Descarga e instalación de VMware Workstation Pro
 
 El instalador de VMware Workstation Pro se descargó desde el portal oficial de Broadcom, al cual se accede creando una cuenta gratuita en https://www.broadcom.com. Una vez en el portal, se navega a la sección de descargas de VMware y se selecciona la última versión disponible de VMware Workstation Pro para Windows. El archivo descargado es un ejecutable (.exe) de aproximadamente 277 MB.
@@ -130,7 +130,7 @@ Tras el reinicio, VMware Workstation Pro se abrió por primera vez. La aplicaci�
 
 ### 2.1. Descarga de la imagen ISO de Ubuntu MATE
 
-La imagen ISO de Ubuntu MATE se descargó desde el sitio oficial de la distribución en https://ubuntu-mate.org/download/. Se seleccionó la versión [**completar: por ejemplo, Ubuntu MATE 22.04.3 LTS**] para la arquitectura amd64 (64 bits). El archivo ISO tiene un tamaño aproximado de 3,7 GB y se almacenó en el directorio de descargas del equipo anfitrión para que VMware pudiera acceder a él durante el asistente de creación de la VM.
+La imagen ISO de Ubuntu MATE se descargó desde el sitio oficial de la distribución en https://ubuntu-mate.org/download/. Se seleccionó la versión Ubuntu MATE 25.10 para la arquitectura amd64 (64 bits). El archivo ISO tiene un tamaño aproximado de 3,7 GB y se almacenó en el directorio de descargas del equipo anfitrión para que VMware pudiera acceder a él durante el asistente de creación de la VM.
 
 ### 2.2. Asistente de nueva máquina virtual
 
@@ -472,8 +472,6 @@ nslookup google.com
 # Trazar la ruta de paquetes hacia un destino
 traceroute 8.8.8.8
 ```
-
-Los resultados más relevantes del monitoreo durante el laboratorio se resumen a continuación: [**completar con los datos reales observados durante la práctica**].
 
 ---
 

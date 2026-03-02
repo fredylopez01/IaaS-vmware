@@ -38,7 +38,7 @@ Documento de investigación que expone los fundamentos conceptuales de la virtua
 
 > **Archivo:** [informe-tecnico-vmware.md](informe-tecnico-vmware.md)
 
-Guía práctica que documenta paso a paso el desarrollo del laboratorio: instalación de VMware Workstation Pro, creación de una VM con Ubuntu MATE, exploración del Virtual Network Editor, configuración y prueba de los tres modos de red con sus resultados reales de conectividad, comunicación entre dos máquinas virtuales por Host-Only y por Bridged, gestión de instantáneas y monitoreo de red. Incluye capturas de pantalla, comandos ejecutados, IPs obtenidas y una tabla resumen de resultados.
+Informe técnico que documenta paso a paso el desarrollo del laboratorio: instalación de VMware Workstation Pro, creación de una VM con Ubuntu MATE, exploración del Virtual Network Editor, configuración y prueba de los tres modos de red con sus resultados reales de conectividad, comunicación entre dos máquinas virtuales por Host-Only y por Bridged, gestión de instantáneas y monitoreo de red. Incluye capturas de pantalla, comandos ejecutados, IPs obtenidas y una tabla resumen de resultados.
 
 ---
 
@@ -48,6 +48,6 @@ Guía práctica que documenta paso a paso el desarrollo del laboratorio: instala
 vmware-docs/
 ├── README.md                   # Este archivo
 ├── marco-teorico-vmware.md     # Fundamentos teóricos
-├── informe-tecnico-vmware.md   # Guía práctica del laboratorio
+├── informe-tecnico-vmware.md   # Informe técnico final
 └── images/                     # Capturas de pantalla del laboratorio
 ```
