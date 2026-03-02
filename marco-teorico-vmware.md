@@ -196,7 +196,7 @@ Tabla 2
 
 La instalación de VMware Workstation Pro sobre Windows es un proceso convencional que no difiere sustancialmente de la instalación de cualquier otra aplicación de escritorio. El instalador se descarga desde el portal oficial de Broadcom en formato ejecutable (.exe) y se ejecuta con privilegios de administrador [1]. Durante el asistente de instalación, el usuario puede seleccionar la ruta de instalación del software, la ubicación predeterminada donde se almacenarán los archivos de las máquinas virtuales, y si desea añadir iconos en el escritorio y en el menú de inicio. Una vez completada la instalación, el sistema operativo anfitrión cargará automáticamente los módulos del kernel de VMware (vmmon y vmnet) que son responsables, respectivamente, del monitor de máquina virtual y de los conmutadores de red virtuales. Esto también creará los adaptadores de red virtuales VMnet1 (Host-Only) y VMnet8 (NAT) como nuevas interfaces de red en el sistema operativo anfitrión, que serán fundamentales para los modos de red del laboratorio.
 
-![alt text](/images/interfaz-principal.png)
+![alt text](./images/interfaz-principal.png)
 
 *Figura 1: Interfaz principal de VMware Workstation Pro — biblioteca de máquinas virtuales*
 
@@ -218,7 +218,7 @@ Por defecto, VMware Workstation Pro crea tres conmutadores virtuales al instalar
 
 La herramienta de administración de estos conmutadores es el **Virtual Network Editor** (accesible desde el menú *Edit → Virtual Network Editor* en Windows). Este panel permite crear, eliminar y configurar conmutadores vmnet, definir si cuentan con servidor DHCP propio, establecer el rango de subred que asignarán y administrar la configuración del servicio NAT [11].
 
-![alt text](/images/virtual-network-editor.png)
+![alt text](./images/virtual-network-editor.png)
 *Figura 2: Virtual Network Editor — conmutadores vmnet configurados en el sistema*
 
 ### 4.2. Modo Bridged: integración directa con la red física
@@ -281,7 +281,7 @@ nmcli con mod "Wired connection 1" ipv4.method manual
 nmcli con up "Wired connection 1"
 ```
 
-![alt text](/images/ip-result.png)
+![alt text](./images/ip-result.png)
 *Figura 3: Resultado de `ip addr show` en Ubuntu MATE — dirección IP asignada por DHCP en modo NAT*
 
 ### 4.8. Verificación de conectividad entre máquinas virtuales
@@ -315,7 +315,7 @@ Una vez creada la VM, todos los parámetros de su hardware virtual pueden modifi
 
 La configuración de **procesadores** permite asignar el número de CPU virtuales y el número de núcleos por CPU. Para Ubuntu MATE con carga de trabajo ligera, 2 CPU virtuales con 1 núcleo cada una son suficientes. La **memoria** se configura en megabytes; para Ubuntu MATE se recomienda un mínimo de 2048 MB (2 GB) para una experiencia de uso cómoda, aunque 1024 MB son suficientes para operaciones de red en línea de comandos. El **disco virtual** se crea durante el asistente de nueva VM y en el laboratorio no suele requerir modificaciones posteriores. El componente más relevante para la práctica es el **adaptador de red**: en el editor de hardware virtual aparece listado como *Network Adapter* y su menú desplegable permite seleccionar directamente cualquiera de los modos de red (Bridged, NAT, Host-Only) o cualquier vmnet personalizado, así como habilitar o deshabilitar el adaptador y configurar si debe estar conectado al encender la VM.
 
-![alt text](/images/adaptador-red.png)
+![alt text](./images/adaptador-red.png)
 *Figura 4: Configuración del adaptador de red de una VM en modo NAT desde el editor de hardware virtual*
 
 ### 5.3. Clonación de máquinas virtuales
@@ -356,7 +356,7 @@ La funcionalidad de **snapshots** o instantáneas permite preservar el estado co
 
 VMware Workstation Pro gestiona los snapshots mediante el **Snapshot Manager** (*VM → Snapshot → Snapshot Manager*), que muestra de forma gráfica el árbol de instantáneas de la VM. Las VMs pueden tener múltiples snapshots organizados en un árbol con ramas, de modo que es posible explorar distintas líneas de configuración partiendo de un estado base común. Cada snapshot almacena únicamente las diferencias respecto al estado anterior, lo que mantiene el uso de espacio en disco acotado cuando no hay grandes cambios entre instantáneas.
 
-![alt text](/images/snapshot-manager.png)
+![alt text](./images/snapshot-manager.png)
 
 *Figura 5: Snapshot Manager*
 

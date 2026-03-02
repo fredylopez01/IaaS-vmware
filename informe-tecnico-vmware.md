@@ -106,7 +106,7 @@ El laboratorio se realizó sobre equipos de escritorio con sistema operativo Win
 
 Antes de proceder con la instalación de VMware Workstation Pro, se verificó que el equipo anfitrión cumplía con los requisitos mínimos de hardware descritos en el marco teórico, con especial atención al estado de las extensiones de virtualización asistida por hardware del procesador. Esta verificación se realizó a través del Administrador de Tareas de Windows (`Ctrl+Shift+Esc`), navegando a la pestaña *Rendimiento → CPU*, donde el campo *Virtualización* debe aparecer como *Habilitada* para confirmar que las extensiones Intel VT-x o AMD-V están activas en la configuración BIOS/UEFI del equipo.
 
-![alt text](images/image.png)
+![alt text](./images/image.png)
 *Figura 1: Captura del Administrador de Tareas mostrando la CPU del equipo con el campo "Virtualización: Habilitada".*
 
 Los resultados de la verificación del equipo utilizado en el laboratorio fueron los siguientes: [**completar con los datos reales del equipo: modelo de procesador, RAM total disponible, espacio en disco libre y versión de Windows**].
@@ -121,7 +121,7 @@ La instalación se inició ejecutando el instalador con privilegios de administr
 
 Tras el reinicio, VMware Workstation Pro se abrió por primera vez. La aplicación solicitó seleccionar entre el modo de uso personal (gratuito) o comercial (requiere licencia); se seleccionó uso personal. La interfaz principal presentó la biblioteca de máquinas virtuales vacía en el panel izquierdo y la pantalla de inicio en el panel central, con los accesos directos para crear una nueva VM o abrir una existente.
 
-![image 3](/images/interfaz-principal.png)
+![image 3](./images/interfaz-principal.png)
 *Figura 3: Captura de la interfaz principal de VMware Workstation Pro en su primer arranque, mostrando la biblioteca vacía y la pantalla de inicio.*
 
 ---
@@ -143,7 +143,7 @@ Se configuraron los siguientes parámetros durante el asistente:
 - **Contraseña**
 - **Ubicación de almacenamiento de la VM** ruta predeterminada en el directorio de VMs de VMware
 
-![image 4](/images/image-1.png)
+![image 4](./images/image-1.png)
 *Figura 4: Captura del asistente de nueva VM y selección de la imagen ISO de Ubuntu MATE.*
 
 ### 2.3. Configuración de hardware virtual: CPU, memoria y disco
@@ -155,7 +155,7 @@ Antes de finalizar el asistente, se revisó y ajustó la configuración de hardw
 - **Disco duro virtual:** 20 GB, tipo dinámico (pre-allocated desactivado)
 - **Adaptador de red:** NAT (configuración inicial; se modificará a lo largo del laboratorio)
 
-![image 5](/images/image-5.png)
+![image 5](./images/image-5.png)
 *Figura 5: Captura del editor de hardware virtual con la configuración de CPU, memoria y disco antes de iniciar la instalación.*
 
 ### 2.4. Instalación del sistema operativo invitado
@@ -178,7 +178,7 @@ sudo apt install open-vm-tools open-vm-tools-desktop -y
 
 Una vez concluida la instalación, se reinició la VM. Tras el reinicio, se verificó que VMware Workstation Pro mostraba la dirección IP de la VM en el panel de información de la biblioteca (pestaña *Summary*), lo que confirma que VMware Tools está activo y funcionando correctamente.
 
-![alt text](images/image-2.png)
+![alt text](./images/image-2.png)
 *Figura 7: Captura de Ubuntu MATE mostrando la IP detectada automáticamente.*
 
 ---
@@ -189,7 +189,7 @@ Una vez concluida la instalación, se reinició la VM. Tras el reinicio, se veri
 
 El Virtual Network Editor se abrió desde el menú *Edit → Virtual Network Editor* de VMware Workstation Pro. La ventana mostró la lista de conmutadores virtuales configurados en el sistema. Se identificaron los tres conmutadores predeterminados: **VMnet0**, configurado en modo Bridged con el adaptador de red físico del equipo; **VMnet1**, configurado en modo Host-Only con su servidor DHCP habilitado; y **VMnet8**, configurado en modo NAT con su servidor DHCP y el servicio NAT activos. Se registraron las subredes asignadas a cada conmutador.
 
-![alt text](images/image-3.png)
+![alt text](./images/image-3.png)
 *Figura 8: Captura del Virtual Network Editor mostrando los conmutadores VMnet0, VMnet1 y VMnet8.*
 
 Los datos observados fueron:
@@ -204,7 +204,7 @@ Los datos observados fueron:
 
 Se abrió el panel *Centro de redes y recursos compartidos* de Windows, accesible desde *Panel de Control → Red e Internet → Centro de redes y recursos compartidos*, y desde allí *Cambiar configuración del adaptador*. En la lista de interfaces de red se identificaron los adaptadores **VMware Network Adapter VMnet1** y **VMware Network Adapter VMnet8**, instalados automáticamente por VMware durante la instalación del software. Se verificaron sus propiedades de TCP/IPv4 para confirmar las direcciones IP que el sistema anfitrión tiene en cada subred virtual.
 
-![alt text](images/image-4.png)
+![alt text](./images/image-4.png)
 *Figura 9: Captura de la ventana de conexiones de red de Windows mostrando los adaptadores VMnet1 y VMnet8 junto a los adaptadores físicos del equipo.*
 
 ---
@@ -215,7 +215,7 @@ Se abrió el panel *Centro de redes y recursos compartidos* de Windows, accesibl
 
 Con la VM apagada, se accedió al editor de hardware virtual desde el menú *VM → Settings*. En el componente *Network Adapter*, se verificó que el modo de red estaba configurado como **NAT** (configuración aplicada por defecto durante la creación de la VM). Se confirmó también que la opción *Connect at power on* estaba habilitada y se aplicó la configuración.
 
-![configuración nat](/images/adaptador-red.png)
+![configuración nat](./images/adaptador-red.png)
 *Figura 10: Captura del editor de hardware virtual con el adaptador de red en modo NAT seleccionado.*
 
 ### 4.2. Verificación de la dirección IP asignada por DHCP
@@ -228,7 +228,7 @@ ip addr show
 
 La salida del comando mostró la interfaz de red virtual (habitualmente denominada `ens33` en VMs de VMware) con una dirección IP en la subred de VMnet8 (192.168.228.130/24), asignada automáticamente por el servidor DHCP de VMware.
 
-![alt text](images/image-5.png)
+![alt text](./images/image-5.png)
 *Figura 11: Captura de la terminal de Ubuntu MATE con la salida completa de `ip addr show`, resaltando la IP asignada en la subred NAT.*
 
 Los resultados obtenidos fueron:
@@ -249,7 +249,7 @@ ping -c 4 8.8.8.8
 
 Los cuatro paquetes ICMP recibieron respuesta exitosa, con tiempos de respuesta de 14.0875 ms en promedio, confirmando que la VM tiene conectividad a Internet a través del servicio NAT de VMware.
 
-![alt text](images/image-6.png)
+![alt text](./images/image-6.png)
 *Figura 12: Captura de la terminal mostrando la salida completa del comando `ping -c 4 8.8.8.8` con las cuatro respuestas recibidas.*
 
 ---
@@ -260,7 +260,7 @@ Los cuatro paquetes ICMP recibieron respuesta exitosa, con tiempos de respuesta 
 
 Con la VM apagada, se accedió nuevamente al editor de hardware virtual y se cambió el modo del *Network Adapter* de NAT a **Host-Only (VMnet1)**. Se guardó la configuración y se encendió la VM.
 
-![alt text](images/image-7.png)
+![alt text](./images/image-7.png)
 *Figura 13: Captura del editor de hardware virtual con el modo Host-Only seleccionado.*
 
 ### 5.2. Configuración de dirección IP estática con nmcli
@@ -282,7 +282,7 @@ nmcli con up "Wired connection 1"
 ip addr show
 ```
 
-![alt text](images/image-8.png)
+![alt text](./images/image-8.png)
 *Figura 14: Captura de la terminal mostrando los comandos `nmcli` ejecutados y la verificación final con `ip addr show`.*
 
 Los valores configurados fueron:
@@ -299,7 +299,7 @@ Para verificar la comunicación entre la VM y el sistema anfitrión a través de
 ping -c 4 192.168.207.1
 ```
 
-![alt text](images/image-9.png)
+![alt text](./images/image-9.png)
 *Figura 15: Captura del ping exitoso desde Ubuntu MATE hacia la dirección del adaptador VMnet1 del anfitrión.*
 
 ---
@@ -310,12 +310,12 @@ ping -c 4 192.168.207.1
 
 Con la VM apagada, se accedió al editor de hardware virtual y se configuró el *Network Adapter* en modo **Bridged**. Se habilitó la opción de detección automática del adaptador físico puente para que VMware seleccionara automáticamente el adaptador de red activo del equipo anfitrión.
 
-![alt text](images/image-10.png)
+![alt text](./images/image-10.png)
 *Figura 16: Captura del editor de hardware virtual con el modo Bridged seleccionado.*
 
 Un paso muy importante que debe hacerse para que todo funcione correctamente es configurar dentro del *Virtual Network Editor*, el VmNet0, no en automático sino explicitamente decirle que adaptador de red, es decir, a donde hacer el puente, pues de esta forma se conecta a la red correcta y empieza a actuar como un dispostivo más en la red con ip propia que es lo que busca el modo bridge.
 
-![alt text](images/image-11.png)
+![alt text](./images/image-11.png)
 *Figura 16-1: Configuración del adaptador de red para el modo bridge dentro del Virtual Network Editor*
 
 ### 6.2. Obtención de dirección IP de la red física
@@ -327,7 +327,7 @@ ip addr show
 ip route show
 ```
 
-![alt text](images/image-12.png)
+![alt text](./images/image-12.png)
 *Figura 17: Captura de la terminal mostrando la IP obtenida en modo Bridged, que debe pertenecer al mismo segmento de red que los equipos físicos del laboratorio.*
 
 Los valores observados fueron:
@@ -348,7 +348,7 @@ ping -c 4 192.168.1.3
 ping -c 4 192.168.1.1
 ```
 
-![alt text](images/image-14.png)
+![alt text](./images/image-14.png)
 *Figura 18: Captura del ping exitoso hacia otro equipo del laboratorio o el gateway, evidenciando que la VM es visible en la red física.*
 
 ---
@@ -361,7 +361,7 @@ Esta sección documenta la práctica central del laboratorio: lograr comunicaci�
 
 Para crear una segunda máquina virtual sin necesidad de realizar todo el proceso de instalación nuevamente, se utilizó la función de clonación completa de VMware Workstation Pro. Con la VM apagada, se accedió al menú *VM → Manage → Clone*, esto dando click sobre el nombre de la máquina, luego se dirige a Manage o Administrar y luego Clone o clonar. Se seleccionó la opción **Full Clone** para generar una copia completamente independiente.
 
-![alt text](images/image-15.png)
+![alt text](./images/image-15.png)
 *Figura 19: Captura del asistente de clonación mostrando la selección de "Full Clone" y el nombre asignado a la nueva VM.*
 
 ### 7.2. Configuración de IPs en las Maquinas Virtuales y conectividad
@@ -426,10 +426,10 @@ Al finalizar esta operación cada máquina tuvo una IP dentro de la red física 
 | VM2 | 192.168.1.5 | 192.168.1.0/24 |
 
 Igual que con el método anterior se realizo una prueba de conectividad y se pudo validar que las dos máquinas estaban en la misma red del anfitrion, la red física, a continuación se presenta la evidencia de este paso para ambas máquinas virtuales.
-![alt text](images/image-17.png)
+![alt text](./images/image-17.png)
 *Figura 20: Validación de conectividad por red física, VM1 -> VM2*
 
-![alt text](images/image-16.png)
+![alt text](./images/image-16.png)
 *Figura 20: Validación de conectividad por red física, VM2 -> VM1*
 
 ---
@@ -440,7 +440,7 @@ Igual que con el método anterior se realizo una prueba de conectividad y se pud
 
 Antes de realizar la práctica de configuración de IP estática de la sección 5, se creó una instantánea (*snapshot*) de la VM con la configuración de red en estado base (IP dinámica por DHCP en modo NAT, VMware Tools instalado). Esto se realizó desde el menú *VM → Snapshot → Take Snapshot*, al que se asignó el nombre **"Base-NAT DHCP-Tools instalados"** y una descripción que indicaba el estado de la VM en ese momento.
 
-![alt text](images/image-18.png)
+![alt text](./images/image-18.png)
 *Figura 21: Captura del Snapshot Manager mostrando la instantánea creada con su nombre y fecha.*
 
 ### 8.2. Restauración del snapshot
